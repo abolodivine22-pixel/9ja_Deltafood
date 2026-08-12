@@ -5,7 +5,7 @@
      Paste your deployed Google Apps Script Web App URL here.
      See apps-script/SETUP.md for how to get this. */
   var CONFIG = {
-    SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzeE87wfxdoMJm2EzpkxboWFmQAGZbn6iflQIKMAaAp-h5ybro1qFXXXCkbssFFvap3fQ/exec'
+    SCRIPT_URL:  'https://script.google.com/macros/s/AKfycby6PwdPTLo1A-OdNJLnkRwCRp3xAclFU47_S2qeqw3HaUcdNZLV-CA_yLy3UBSN5zyKSA/exec'
   };
 
   function submitToBackend(fields){
