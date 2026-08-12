@@ -130,9 +130,6 @@ p{ margin:0; }
    effect does the opacity/translate get set up. This removes the
    previous JS-timeout dependency that could leave sections stuck. */
 .reveal{ opacity:1; transform:none; }
-.js .reveal{ opacity:.001; transform:translateY(16px); transition:opacity .6s var(--ease), transform .6s var(--ease); }
-.js .reveal.in-view{ opacity:1; transform:none; }
-.reveal-stagger.in-view > *{ transition-delay:calc(var(--i, 0) * 90ms); }
 
 /* ============================================================
    3. LOADER
@@ -602,7 +599,7 @@ footer{ background:var(--char); color:rgba(250,242,226,.75); padding:80px 0 0; }
 #topBtn{
   position:fixed; bottom:28px; right:28px; z-index:400;
   width:50px; height:50px; border-radius:50%; background:var(--char); color:var(--harmattan-gold-light);
-  border:1px solid rgba(245, 220, 171, 0.15); display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(250,242,226,.15); display:flex; align-items:center; justify-content:center;
   opacity:0; visibility:hidden; transform:translateY(14px);
   transition:all .3s var(--ease);
 }
