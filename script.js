@@ -1,6 +1,27 @@
 (function(){
   'use strict';
 
+  /* ---------- Backend config ----------
+     Paste your deployed Google Apps Script Web App URL here.
+     See apps-script/SETUP.md for how to get this. */
+  var CONFIG = {
+    SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzeE87wfxdoMJm2EzpkxboWFmQAGZbn6iflQIKMAaAp-h5ybro1qFXXXCkbssFFvap3fQ/exec'
+  };
+
+  function submitToBackend(fields){
+    if(!CONFIG.SCRIPT_URL || CONFIG.SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
+      console.warn('9ja Delta Food: Apps Script URL not configured yet — skipping backend submit.');
+      return;
+    }
+    var body = new URLSearchParams(fields);
+    // mode:'no-cors' is required for Apps Script web apps; the response
+    // is opaque (unreadable) but the request still reaches the script,
+    // writes the sheet row, and sends the emails. The UI already shows
+    // its own success state below, independent of this response.
+    fetch(CONFIG.SCRIPT_URL, { method:'POST', mode:'no-cors', body: body })
+      .catch(function(err){ console.error('9ja Delta Food: backend submit failed', err); });
+  }
+
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Loader ---------- */
@@ -188,13 +209,22 @@
     if(!allValid) return;
 
     var name = document.getElementById('resName').value;
+    var email = document.getElementById('resEmail').value;
+    var phone = document.getElementById('resPhone').value;
     var date = document.getElementById('resDate').value;
     var time = document.getElementById('resTime').value;
     var guests = document.getElementById('resGuests').value;
     var note = document.getElementById('resNote').value;
 
+    submitToBackend({
+      formType: 'reservation',
+      name: name, email: email, phone: phone,
+      date: date, time: time, guests: guests, note: note
+    });
+
     document.getElementById('resSummary').textContent =
-      'Thanks, ' + name + ' — a table for ' + guests + ' on ' + date + ' at ' + time + ' is on its way to confirmation.';
+      'Thanks, ' + name + ' — a table for ' + guests + ' on ' + date + ' at ' + time +
+      ' is on its way to confirmation. A confirmation email is heading to your inbox.';
 
     var waMsg = "Hi 9ja Delta Food, I'd like to book a table.\nName: " + name +
       "\nDate: " + date + "\nTime: " + time + "\nGuests: " + guests +
@@ -218,6 +248,15 @@
       }
     });
     if(!allValid) return;
+
+    submitToBackend({
+      formType: 'contact',
+      name: document.getElementById('cName').value,
+      email: document.getElementById('cEmail').value,
+      subject: document.getElementById('cSubject').value,
+      message: document.getElementById('cMessage').value
+    });
+
     document.getElementById('contactSuccess').style.display = 'block';
     contactForm.reset();
   });
