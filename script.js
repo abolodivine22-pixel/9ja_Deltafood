@@ -99,25 +99,6 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach(function(s){ spy.observe(s); });
 
-  /* ---------- Reveal on scroll ----------
-     Content is visible by default (see CSS: .reveal has opacity:1 unless
-     the .js class is present). Here we simply add .in-view the first
-     time each element enters the viewport - no timers, no class that
-     could leave a section stuck hidden. */
-  if(!reduceMotion && 'IntersectionObserver' in window){
-    var revealEls = document.querySelectorAll('.reveal');
-
-    var revealObserver = new IntersectionObserver(function(entries, obs){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('in-view');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold:0, rootMargin:'0px 0px 150px 0px' });
-    revealEls.forEach(function(el){ revealObserver.observe(el); });
-  }
-
   /* ---------- Menu filter ---------- */
   var filterBtns = document.querySelectorAll('.filter-btn');
   var menuCards = document.querySelectorAll('#menuGrid .menu-card');
