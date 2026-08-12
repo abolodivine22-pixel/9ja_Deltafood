@@ -78,14 +78,13 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach(function(s){ spy.observe(s); });
 
-  /* ---------- Reveal on scroll (progressive enhancement only) ----------
-     Content is visible by default via CSS. If the browser supports
-     IntersectionObserver and motion is allowed, we add a subtle fade-in.
-     A hard timeout guarantees every section is fully visible no matter
-     what, so a slow/failed observer can never leave a section blank. */
+  /* ---------- Reveal on scroll ----------
+     Content is visible by default (see CSS: .reveal has opacity:1 unless
+     the .js class is present). Here we simply add .in-view the first
+     time each element enters the viewport - no timers, no class that
+     could leave a section stuck hidden. */
   if(!reduceMotion && 'IntersectionObserver' in window){
     var revealEls = document.querySelectorAll('.reveal');
-    revealEls.forEach(function(el){ el.classList.add('will-animate'); });
 
     var revealObserver = new IntersectionObserver(function(entries, obs){
       entries.forEach(function(entry){
@@ -94,14 +93,8 @@
           obs.unobserve(entry.target);
         }
       });
-    }, { threshold:0, rootMargin:'0px 0px 200px 0px' });
+    }, { threshold:0, rootMargin:'0px 0px 150px 0px' });
     revealEls.forEach(function(el){ revealObserver.observe(el); });
-
-    // Safety net: force everything visible shortly after load regardless
-    // of observer behaviour, so nothing can stay hidden indefinitely.
-    setTimeout(function(){
-      revealEls.forEach(function(el){ el.classList.add('in-view'); });
-    }, 1800);
   }
 
   /* ---------- Menu filter ---------- */
@@ -126,7 +119,7 @@
       var dish = link.getAttribute('data-dish');
       var price = link.getAttribute('data-price');
       var msg = "Hi 9ja Delta Food, I'd like to order: " + dish + " (" + price + ").";
-      window.open('https://wa.me/2348001234567?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+      window.open('https://wa.me/2349157470742?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     });
   });
 
@@ -206,7 +199,7 @@
     var waMsg = "Hi 9ja Delta Food, I'd like to book a table.\nName: " + name +
       "\nDate: " + date + "\nTime: " + time + "\nGuests: " + guests +
       (note ? ("\nNote: " + note) : "");
-    document.getElementById('resWhatsapp').href = 'https://wa.me/2348001234567?text=' + encodeURIComponent(waMsg);
+    document.getElementById('resWhatsapp').href = 'https://wa.me/2349157470742?text=' + encodeURIComponent(waMsg);
 
     resForm.style.display = 'none';
     document.getElementById('resSuccess').classList.add('show');
