@@ -16,6 +16,7 @@
 </head>
 
 <body>
+<script>document.documentElement.classList.add('js');</script>
 
 <a href="#main" class="skip-link">Skip to main content</a>
 
@@ -28,7 +29,7 @@
 <header id="header">
   <div class="container">
     <div class="logo">
-      <img src=" images\ChatGPT Image Aug 11, 2026, 12_16_16 PM (1).png" alt="9ja Delta Food" class="logo-img">
+      <img src="images/ChatGPT Image Aug 11, 2026, 12_16_16 PM (1).png" alt="9ja Delta Food" class="logo-img">
     </div>
 
     <nav id="navbar" aria-label="Primary">
@@ -59,11 +60,12 @@
   <div class="hero-frond" aria-hidden="true">
     <svg viewBox="0 0 300 300" fill="none"><path d="M150 20C150 20 260 60 260 150C260 200 210 240 150 240" stroke="#CE9B2E" stroke-width="1.4" opacity="0.5"/><path d="M150 20C150 20 60 70 70 160C74 205 120 235 150 240" stroke="#E36A34" stroke-width="1.4" opacity="0.5"/><circle cx="150" cy="230" r="4" fill="#CE9B2E" opacity="0.7"/></svg>
   </div>
+  <div class="hero-grain" aria-hidden="true"></div>
 
   <div class="container">
     <div class="hero-content reveal in-view">
       <span class="eyebrow">Authentic Niger Delta Kitchen · Warri</span>
-      <h1>Taste the <em>Pride</em> of the Delta</h1>
+      <h1>Taste the <em>Pride</em><br>of the Delta</h1>
       <p>Real Nigerian and Delta delicacies, cooked the way home cooking should taste — fresh palm fruit, native spices, and hospitality that remembers your name.</p>
       <div class="hero-buttons">
         <a href="#menu" class="btn btn--primary">View Menu</a>
@@ -78,6 +80,15 @@
     <svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path fill="var(--warri-ivory)" d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,110L1360,110C1280,110,1120,110,960,110C800,110,640,110,480,110C320,110,160,110,80,110L0,110Z"></path></svg>
   </div>
 </section>
+
+<!-- ================= RIVER DIVIDER ================= -->
+<div class="river-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path class="river-strand river-strand--1" d="M0,30 C 240,5 480,55 720,30 C 960,5 1200,55 1440,30" />
+    <path class="river-strand river-strand--2" d="M0,34 C 240,58 480,10 720,34 C 960,58 1200,10 1440,34" />
+    <path class="river-strand river-strand--3" d="M0,26 C 240,50 480,2 720,26 C 960,50 1200,2 1440,26" />
+  </svg>
+</div>
 
 <!-- ================= ABOUT ================= -->
 <section id="about" class="section">
@@ -147,35 +158,35 @@
           <h3>Jollof Rice & Chicken</h3>
           <p>Smoky Nigerian jollof served with grilled chicken and salad.</p>
           <div class="menu-card-footer">
-            <span>₦6,500</span>
+            <span class="price-pill">₦6,500</span>
             <a href="#" class="order-link" data-dish="Jollof Rice & Chicken" data-price="₦6,500"><i class="fab fa-whatsapp"></i>Order</a>
           </div>
         </div>
       </article>
 
       <article class="menu-card" data-category="soup" style="--i:1">
-        <div class="menu-card-media"><img src=" images/ChatGPT Image Aug 10, 2026, 01_03_47 PM.png" alt="Traditional African palm fruit soup" loading="lazy"></div>
+        <div class="menu-card-media"><img src="images/ChatGPT Image Aug 10, 2026, 01_03_47 PM.png" alt="Traditional African palm fruit soup" loading="lazy"></div>
         <div class="menu-card-body">
           <div class="menu-card-icon"><i class="fas fa-bowl-food"></i></div>
           <span class="menu-card-tag">Soups & Swallow</span>
           <h3>Banga Soup</h3>
           <p>Traditional Delta palm fruit soup served with starch.</p>
           <div class="menu-card-footer">
-            <span>₦5,500</span>
+            <span class="price-pill">₦5,500</span>
             <a href="#" class="order-link" data-dish="Banga Soup" data-price="₦3,500"><i class="fab fa-whatsapp"></i>Order</a>
           </div>
         </div>
       </article>
 
       <article class="menu-card" data-category="soup" style="--i:2">
-        <div class="menu-card-media"><img src="images\ChatGPT Image Aug 10, 2026, 01_46_04 PM.png" alt="Grilled shrimp and seafood" loading="lazy"></div>
+        <div class="menu-card-media"><img src="images/ChatGPT Image Aug 10, 2026, 01_46_04 PM.png" alt="Grilled shrimp and seafood" loading="lazy"></div>
         <div class="menu-card-body">
           <div class="menu-card-icon"><i class="fas fa-shrimp"></i></div>
           <span class="menu-card-tag">Soups & Swallow</span>
           <h3>Seafood Okra</h3>
           <p>Fresh prawns, crab and fish cooked in rich okra soup.</p>
           <div class="menu-card-footer">
-            <span>₦8,000</span>
+            <span class="price-pill">₦8,000</span>
             <a href="#" class="order-link" data-dish="Seafood Okra" data-price="₦8,000"><i class="fab fa-whatsapp"></i>Order</a>
           </div>
         </div>
@@ -189,35 +200,35 @@
           <h3>Grilled Catfish</h3>
           <p>Freshly grilled catfish served with pepper sauce.</p>
           <div class="menu-card-footer">
-            <span>₦7,500</span>
+            <span class="price-pill">₦7,500</span>
             <a href="#" class="order-link" data-dish="Grilled Catfish" data-price="₦7,500"><i class="fab fa-whatsapp"></i>Order</a>
           </div>
         </div>
       </article>
 
       <article class="menu-card" data-category="soup" style="--i:4">
-        <div class="menu-card-media"><img src="images\ChatGPT Image Aug 11, 2026, 12_26_16 PM.png " alt="Spicy Nigerian soup with red peppers" loading="lazy"></div>
+        <div class="menu-card-media"><img src="images/ChatGPT Image Aug 11, 2026, 12_26_16 PM.png" alt="Spicy Nigerian soup with red peppers" loading="lazy"></div>
         <div class="menu-card-body">
           <div class="menu-card-icon"><i class="fas fa-pepper-hot"></i></div>
           <span class="menu-card-tag">Soups & Swallow</span>
           <h3>Goat Pepper Soup</h3>
           <p>Hot and spicy pepper soup with fresh local spices.</p>
           <div class="menu-card-footer">
-            <span>₦4,500</span>
+            <span class="price-pill">₦4,500</span>
             <a href="#" class="order-link" data-dish="Goat Pepper Soup" data-price="₦4,500"><i class="fab fa-whatsapp"></i>Order</a>
           </div>
         </div>
       </article>
 
       <article class="menu-card" data-category="rice" style="--i:5">
-        <div class="menu-card-media"><img src=" images\ChatGPT Image Aug 10, 2026, 01_40_43 PM (1).png" alt="Spiced rice with chicken and peppers" loading="lazy"></div>
+        <div class="menu-card-media"><img src="images/ChatGPT Image Aug 10, 2026, 01_40_43 PM (1).png" alt="Spiced rice with chicken and peppers" loading="lazy"></div>
         <div class="menu-card-body">
           <div class="menu-card-icon"><i class="fas fa-bowl-rice"></i></div>
           <span class="menu-card-tag">Rice & Grills</span>
           <h3>Native Rice</h3>
           <p>Traditional Delta native rice with assorted meat.</p>
           <div class="menu-card-footer">
-            <span>₦6,000</span>
+            <span class="price-pill">₦6,000</span>
             <a href="#" class="order-link" data-dish="Native Rice" data-price="₦6,000"><i class="fab fa-whatsapp"></i>Order</a>
           </div>
         </div>
@@ -227,7 +238,7 @@
   </div>
 </section>
 
-<!-- ================= FLAVORS (replaces gallery) ================= -->
+<!-- ================= FLAVORS ================= -->
 <section id="flavors" class="section">
   <div class="container">
     <div class="section-head reveal">
@@ -270,7 +281,7 @@
   <div class="container chef-grid">
     <div class="chef-badge reveal">
       <div class="chef-badge-ring" aria-hidden="true"></div>
-      <div class="chef-badge-core"><img src="images\ChatGPT Image Aug 10, 2026, 12_56_49 PM.png" alt="Chefs cooking over an open flame"></div>
+      <div class="chef-badge-core"><img src="images/ChatGPT Image Aug 10, 2026, 12_56_49 PM.png" alt="Chefs cooking over an open flame"></div>
     </div>
 
     <div class="chef-content reveal">
@@ -396,9 +407,9 @@
       <div class="contact-info reveal">
         <h3>Get In Touch</h3>
         <ul class="contact-list">
-          <li><i class="fas fa-map-marker-alt"></i><span>asaba, Delta State, Nigeria</span></li>
-          <li><i class="fas fa-phone"></i><span>+234 9157470742</span></li>
-          <li><i class="fas fa-envelope"></i><span>info@abolodivine22@gmail.com</span></li>
+          <li><i class="fas fa-map-marker-alt"></i><span>Asaba, Delta State, Nigeria</span></li>
+          <li><i class="fas fa-phone"></i><span>+234 915 747 0742</span></li>
+          <li><i class="fas fa-envelope"></i><span>info@9jadeltafood.com</span></li>
           <li><i class="fas fa-clock"></i><span>Monday – Sunday: 8:00 AM – 10:00 PM</span></li>
         </ul>
         <div class="social-links">
@@ -422,7 +433,7 @@
     </div>
 
     <div id="map" class="reveal">
-      <iframe src="https://www.google.com/maps?q=Warri,Delta%20State,Nigeria&output=embed" loading="lazy" title="9ja Delta Food location map" allowfullscreen></iframe>
+      <iframe src="https://www.google.com/maps?q=Asaba,Delta%20State,Nigeria&output=embed" loading="lazy" title="9ja Delta Food location map" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -457,7 +468,7 @@
 
     <div>
       <h3>Opening Hours</h3>
-      <p>Monday – saturday<br>9:00 AM – 6:00 PM</p>
+      <p>Monday – Saturday<br>9:00 AM – 6:00 PM</p>
     </div>
 
     <div>
